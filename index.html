@@ -2,9 +2,17 @@
 <head>
 </head>
 <body>
-    test
     <script src="assets/chroma.js"></script>
     <script type="text/javascript">
-      console.log("OK")
+   var gen = chroma.cubehelix()
+    .start(Math.floor(Math.random() * 800) + 1 )
+    .rotations(Math.floor(Math.random() * 0.15) + 0.05)
+    .gamma(Math.floor(Math.random() * 0.8) + 0.5 )
+    .lightness([0.3, 0.8])
+  .scale() // convert to chroma.scale
+    .correctLightness()
+    .colors(5);
+    document.body.innerHTML = JSON.stringify(gen)
+
     </script>
 </body>
